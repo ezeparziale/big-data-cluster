@@ -99,39 +99,48 @@ Más info en el archivo **hadoop.env**
 
 ## Puertos
 
-# Acceso
+* 9000: hdfs
+* 9870: name node
+* 9868: secondary name node
+* 19888: history server
+* 8088: resource manager
+
+&nbsp;
+
+## Acceso
 
 hdfs:
-´´´
+```
 http://localhost:9000
-´´´
+```
 
 name node:
-´´´
+```
 http://localhost:9870
-´´´
+```
 
 secondary name node:
-´´´
+```
 http://localhost:9868
-´´´
+```
 
 history server:
-´´´
+```
 http://localhost:19888
-´´´
+```
 
 resource manager:
-´´´
+```
 http://localhost:8088
-´´´
+```
 
-
+&nbsp;
 
 ## Versiones de imagenes
 
 La imagen esta creada sobre Ubuntu 20.04
 
+&nbsp;
 
 ## To Do
-* Version con high availabilitys
+* Version con high availability
