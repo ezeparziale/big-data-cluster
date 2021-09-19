@@ -1,0 +1,31 @@
+version: '3.9'
+services:
+
+  hadoop-master:
+    image: hadoop-docker:1.0.0-hadoop3.3.1-ubuntu-java8
+    container_name: hadoop-master
+    ports:
+      - 9870:9870
+      - 8088:8088
+      - 9000:9000
+      - 9864:9864
+      - 19888:19888
+      - 9868:9868
+      - 8042:8042
+    hostname: hadoop-master
+    environment:
+      - HADOOP_PSEUDO_MODE=1
+    env_file: 
+      - ./hadoop.env
+    networks: 
+      - hadoop-net
+    volumes:
+      - hadoop-volume:/hadoop-data
+      
+networks:
+  hadoop-net:
+    name: hadoop-net
+
+volumes: 
+  hadoop-volume:
+    driver: local
