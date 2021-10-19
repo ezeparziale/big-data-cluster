@@ -1,0 +1,18 @@
+version: '3.9'
+services:
+
+  zoo-1:
+    image: ezeparziale/zookeeper-docker:1.0.0
+    container_name: zoo-1
+    hostname: zoo-1
+    environment:
+      - HADOOP_TYPE=zookeeper
+      - myid=1
+    env_file: 
+      - ./zoo.env
+    networks: 
+      - hadoop-net
+
+networks:
+  hadoop-net:
+    name: hadoop-net
