@@ -67,6 +67,23 @@ Se lanzan los siguientes servicios individuales en contenedores separados:
 
 &nbsp;
 
+## Modo distribuido completo alta disponibilidad
+
+Es la misma version que **modo distribuido** pero ahora se agrega zookeeper, journalnode y más namenodes para brindar la alta disponibilidad.
+
+Se encuentra el docker-compose listo en la carpeta:
+
+* launch-fully-distributed-high-availability
+
+Se lanzan los siguientes servicios individuales en contenedores separados:
+
+* namenode x3
+* datanode x2
+* journalnode x3
+* zookeeper x3
+
+&nbsp;
+
 ## Configuración de variables externas
 
 Los archivos de hadoop se configuran mediante variables externas, las cuales son leidas al lanzar el contenedor y se regeneran los archivos.  
@@ -161,9 +178,21 @@ La imagen esta creada sobre Ubuntu 20.04
 
 &nbsp;
 
+## Tags
+
+* 1.0.0-hadoop3.3.1-ubuntu-java8
+  
+  * Primera versión  
+  
+* 1.0.1-hadoop3.3.1-ubuntu-java8
+
+  * Se agrega la opción para alta disponibilidad. Más info en carpeta **launch-fully-distributed_high_availability**
+
 ## To Do
 
-* Version con high availability
+* ~~Version con high availability~~
+* Optimazacion de codigo
+* Alpine version ???
 
 &nbsp;
 
