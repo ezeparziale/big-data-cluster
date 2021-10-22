@@ -34,6 +34,19 @@ function check_hdfs_format() {
   fi
 }
 
+function check_hdfs_format_ha() {
+  if [ ! -d "$HADOOP_DATA/hdfs" ]; then
+    $HADOOP_HOME/bin/hdfs namenode -format
+    $HADOOP_HOME/bin/hdfs zkfc -formatZK
+  fi
+}
+
+
+function check_hdfs_bootstrapStandby() {
+  if [ ! -d "$HADOOP_DATA/hdfs" ]; then
+    $HADOOP_HOME/bin/hdfs namenode -bootstrapStandby
+  fi
+}
 
 configure $HADOOP_HOME/etc/hadoop/core-site.xml CORE_SITE
 configure $HADOOP_HOME/etc/hadoop/hdfs-site.xml HDFS_SITE
@@ -59,6 +72,36 @@ fi
 
 # Arrancar Hadoop Distribuido
 # Hadoop
+if [[ "${HADOOP_TYPE}" == "nn1" ]]; then
+  check_hdfs_format_ha
+  printf "Hello %s\n" "$(hostname)"
+  $HADOOP_HOME/bin/hdfs --daemon start namenode
+  printf "namenode started\n"
+  hdfs --daemon start zkfc
+  printf "zkfc started\n"
+  jps
+  sleep 1
+fi
+if [[ "${HADOOP_TYPE}" == "nn2" ]]; then
+  check_hdfs_bootstrapStandby
+  printf "Hello %s\n" "$(hostname)"
+  $HADOOP_HOME/bin/hdfs --daemon start namenode
+  printf "namenode started\n"
+  hdfs --daemon start zkfc
+  printf "zkfc started\n"
+  jps
+  sleep 1
+fi
+if [[ "${HADOOP_TYPE}" == "nn3" ]]; then
+  check_hdfs_bootstrapStandby
+  printf "Hello %s\n" "$(hostname)"
+  $HADOOP_HOME/bin/hdfs --daemon start namenode
+  printf "namenode started\n"
+  hdfs --daemon start zkfc
+  printf "zkfc started\n"
+  jps
+  sleep 1
+fi
 if [[ "${HADOOP_TYPE}" == *"namenode"* ]]; then
   check_hdfs_format
   printf "Hello %s\n" "$(hostname)"
@@ -78,6 +121,13 @@ if [[ "${HADOOP_TYPE}" == *"secondarynamenode"* ]]; then
   printf "Hello %s\n" "$(hostname)"
   $HADOOP_HOME/bin/hdfs --daemon start secondarynamenode
   printf "secondarynamenode started\n"
+  jps
+  sleep 1
+fi
+if [[ "${HADOOP_TYPE}" == *"journalnode"* ]]; then
+  printf "Hello %s\n" "$(hostname)"
+  $HADOOP_HOME/bin/hdfs --daemon start journalnode
+  printf "journalnode started\n"
   jps
   sleep 1
 fi

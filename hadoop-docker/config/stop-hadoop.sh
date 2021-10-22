@@ -36,6 +36,13 @@ if [[ "${HADOOP_TYPE}" == *"secondarynamenode"* ]]; then
   jps
   sleep 1
 fi
+if [[ "${HADOOP_TYPE}" == *"journalnode"* ]]; then
+  printf "Hello %s\n" "$(hostname)"
+  $HADOOP_HOME/bin/hdfs --daemon stop journalnode
+  printf "journalnode stopped\n"
+  jps
+  sleep 1
+fi
 
 
 # Yarn
