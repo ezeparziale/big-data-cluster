@@ -11,7 +11,7 @@ Imagen docker con spark listo para usarse en docker.
 
 ## To Do
 
-* Docker compose
+* ~~Docker compose~~
 * Optimizacion de codigo
 
 &nbsp;
