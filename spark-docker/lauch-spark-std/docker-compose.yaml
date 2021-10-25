@@ -1,0 +1,54 @@
+version: '3'
+services:
+
+  spark-master:
+    image: ezeparziale/spark:1.0.0-alpha-spark3.1.2-ubuntu-java8
+    container_name: spark-master
+    ports:
+      - 8080:8080
+      - 7077:7077
+      - 4040:4040
+    hostname: spark-master
+    environment:
+      - SPARK_TYPE=master
+    env_file: 
+      - ./spark.env
+      - ./hadoop.env
+    networks: 
+      - hadoop-net
+
+  spark-worker-1:
+    image: ezeparziale/spark:1.0.0-alpha-spark3.1.2-ubuntu-java8
+    container_name: spark-worker-1
+    ports:
+      - 8081:8081
+      - 4041:4040
+    hostname: spark-worker-1
+    environment:
+      - SPARK_TYPE=worker
+    env_file: 
+      - ./spark.env
+    networks: 
+      - hadoop-net
+
+  spark-worker-2:
+    image: ezeparziale/spark:1.0.0-alpha-spark3.1.2-ubuntu-java8
+    container_name: spark-worker-2
+    ports:
+      - 8082:8081
+      - 4042:4040
+    hostname: spark-worker-2
+    environment:
+      - SPARK_TYPE=worker
+    env_file: 
+      - ./spark.env
+    networks: 
+      - hadoop-net
+
+networks:
+  hadoop-net:
+    name: hadoop-net
+
+volumes: 
+  hadoop-volume:
+    driver: local
