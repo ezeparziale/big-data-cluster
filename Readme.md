@@ -5,6 +5,6 @@ Creación de un cluster para big data con los distintos componentes del ecosiste
 Features:
 
 - [x] Hadoop
-- [ ] Zookeeper
+- [x] Zookeeper
 - [ ] Spark
 - [ ] Hive
