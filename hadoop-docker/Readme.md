@@ -184,7 +184,7 @@ La imagen esta creada sobre Ubuntu 20.04
   
   * Primera versión  
   
-* 1.0.1-hadoop3.3.1-ubuntu-java8
+* 1.1.0-hadoop3.3.1-ubuntu-java8
 
   * Se agrega la opción para alta disponibilidad. Más info en carpeta **launch-fully-distributed_high_availability**
 
