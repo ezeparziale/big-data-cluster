@@ -6,5 +6,5 @@ Features:
 
 - [x] Hadoop
 - [x] Zookeeper
-- [ ] Spark
+- [X] Spark
 - [ ] Hive
