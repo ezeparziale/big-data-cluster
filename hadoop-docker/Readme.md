@@ -69,7 +69,7 @@ Se lanzan los siguientes servicios individuales en contenedores separados:
 
 ## Modo distribuido completo alta disponibilidad
 
-Es la misma version que **modo distribuido** pero ahora se agrega zookeeper, journalnode y más namenodes para brindar la alta disponibilidad.
+Es la misma versión que **modo distribuido** pero ahora se agrega zookeeper, journalnode y más namenodes para brindar la alta disponibilidad.
 
 Se encuentra el docker-compose listo en la carpeta:
 
@@ -86,7 +86,7 @@ Se lanzan los siguientes servicios individuales en contenedores separados:
 
 ## Configuración de variables externas
 
-Los archivos de hadoop se configuran mediante variables externas, las cuales son leidas al lanzar el contenedor y se regeneran los archivos.  
+Los archivos de hadoop se configuran mediante variables externas, las cuales son leídas al lanzar el contenedor y se regeneran los archivos.  
 Archivos parametrizables:
 
 * core-site.xml
@@ -94,7 +94,7 @@ Archivos parametrizables:
 * mapred-site.xml
 * yarn-site.xml
 
-Estos archivos fisicamente se encuentran en la carpeta:
+Estos archivos físicamente se encuentran en la carpeta:
 
 ```bash
 ${HADOOP_HOME}/etc/hadoop
@@ -107,7 +107,7 @@ Prefijos de las variables:
 * MAPRED_SITE: para el archivo mapred-site.xml
 * YARN_SITE: para el archivo yarn-site.xml
 
-Por ejemplo para setear la siguiente configuración en el archivo core-site.xml se debe crear al siguiente variable:
+Por ejemplo, para setear la siguiente configuración en el archivo core-site.xml se debe crear la siguiente variable:
 
 ```xml
 <configuration>
@@ -190,7 +190,7 @@ La imagen esta creada sobre Ubuntu 20.04
 
 ## To Do
 
-* ~~Version con high availability~~
+* ~~Versión con high availability~~
 * Optimazacion de codigo
 * Alpine version ???
 
