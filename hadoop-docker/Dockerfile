@@ -27,7 +27,6 @@ WORKDIR /opt
 
 # Descargar hadoop 3.3.1
 ENV HADOOP_VERSION=3.3.1
-# COPY ./binary/hadoop-$HADOOP_VERSION.tar.gz .
 RUN wget "https://apache.zero.com.ar/hadoop/common/hadoop-$HADOOP_VERSION/hadoop-$HADOOP_VERSION.tar.gz" && \
     tar xzf hadoop-$HADOOP_VERSION.tar.gz && \
     mv hadoop-$HADOOP_VERSION $HADOOP_HOME && \
