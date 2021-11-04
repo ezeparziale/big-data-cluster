@@ -11,6 +11,7 @@ function addProperty() {
   sed -i "/<\/configuration>/ s/.*/${escapedEntry}\n&/" $path
 }
 
+
 function configure() {
     local path=$1
     local envPrefix=$2
@@ -28,11 +29,13 @@ function configure() {
     done
 }
 
+
 function check_hdfs_format() {
   if [ ! -d "$HADOOP_DATA/hdfs" ]; then
     $HADOOP_HOME/bin/hdfs namenode -format
   fi
 }
+
 
 function check_hdfs_format_ha() {
   if [ ! -d "$HADOOP_DATA/hdfs" ]; then
@@ -53,7 +56,6 @@ configure $HADOOP_HOME/etc/hadoop/hdfs-site.xml HDFS_SITE
 configure $HADOOP_HOME/etc/hadoop/mapred-site.xml MAPRED_SITE
 configure $HADOOP_HOME/etc/hadoop/yarn-site.xml YARN_SITE
 
-
 # Arrancar servicio ssh
 service ssh start
 
@@ -71,7 +73,7 @@ if [ "${HADOOP_PSEUDO_MODE}" == "1" ]; then
 fi
 
 # Arrancar Hadoop Distribuido
-# Hadoop
+# Nodos nn para High Availability
 if [[ "${HADOOP_TYPE}" == "nn1" ]]; then
   check_hdfs_format_ha
   printf "Hello %s\n" "$(hostname)"
@@ -102,6 +104,8 @@ if [[ "${HADOOP_TYPE}" == "nn3" ]]; then
   jps
   sleep 1
 fi
+
+# Arrancar Hadoop Distribuido nodos
 if [[ "${HADOOP_TYPE}" == *"namenode"* ]]; then
   check_hdfs_format
   printf "Hello %s\n" "$(hostname)"

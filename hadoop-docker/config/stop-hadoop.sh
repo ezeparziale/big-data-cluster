@@ -1,7 +1,5 @@
 #!/bin/bash
 
-# Detener Hadoop
-
 # Detener Hadoop Pseudo-distribuido
 if [ "${HADOOP_PSEUDO_MODE}" == "1" ]; then
   $HADOOP_HOME/bin/hdfs --daemon stop namenode
