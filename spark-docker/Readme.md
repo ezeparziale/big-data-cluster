@@ -97,6 +97,10 @@ La imagen esta creada sobre Ubuntu 20.04
   
   * Version preliminar
 
+* 1.0.0-alpha-spark3.2.0-ubuntu-java8
+  
+  * Spark 3.2.0 ready
+
 ## To Do
 
 * ~~Docker compose~~
