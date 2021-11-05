@@ -140,8 +140,8 @@ services:
       - ./hadoop.env
     networks: 
       - hadoop-net
-    # volumes:
-    #   - hadoop-volume-worker-1:/hadoop-data
+    volumes:
+      - hadoop-volume-worker-1:/hadoop-data
 
   hadoop-worker-2:
     image: ezeparziale/hadoop-docker:1.1.0-hadoop3.3.1-ubuntu-java8
@@ -155,19 +155,13 @@ services:
       - ./hadoop.env
     networks: 
       - hadoop-net
-    # volumes:
-    #   - hadoop-volume-worker-2:/hadoop-data
+    volumes:
+      - hadoop-volume-worker-2:/hadoop-data
 
 networks:
   hadoop-net:
     name: hadoop-net
     
-# volumes: 
-#   hadoop-volume-master:
-#   hadoop-volume-worker-1:
-#   hadoop-volume-worker-2:
-#   hadoop-volume-secondarynamenode-1:
-#   hadoop-volume-resourcemanager-1:
-#   hadoop-volume-nodemanager-1:
-#   hadoop-volume-nodemanager-2:
-#   hadoop-volume-historyserver-1:
+volumes: 
+  hadoop-volume-worker-1:
+  hadoop-volume-worker-2:
