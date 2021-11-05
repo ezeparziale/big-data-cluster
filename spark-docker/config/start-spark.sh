@@ -11,6 +11,7 @@ function addProperty() {
   sed -i "/<\/configuration>/ s/.*/${escapedEntry}\n&/" $path
 }
 
+
 function configure() {
     local path=$1
     local envPrefix=$2
@@ -28,6 +29,7 @@ function configure() {
     done
 }
 
+
 function check_hdfs_format() {
   if [ ! -d "$HADOOP_DATA/hdfs" ]; then
     $HADOOP_HOME/bin/hdfs namenode -format
@@ -42,7 +44,6 @@ configure $HADOOP_HOME/etc/hadoop/yarn-site.xml YARN_SITE
 
 # Arrancar servicio ssh
 service ssh start
-
 
 # Arrancar Spark Distribuido
 # Spark
@@ -60,7 +61,6 @@ if [ "${SPARK_TYPE}" == "worker" ]; then
   jps
   sleep 1
 fi
-
 
 # Mantener el contenedor ejecutandose
 tail -f /dev/null

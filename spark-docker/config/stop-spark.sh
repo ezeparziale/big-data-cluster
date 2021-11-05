@@ -1,6 +1,5 @@
 #!/bin/bash
 
-
 # Detener Spark Distribuido
 # Spark
 if [ "${SPARK_TYPE}" == "master" ]; then
