@@ -83,9 +83,7 @@ CORE_SITE_fs_defaultFS=hdfs://hadoop-master:9000
 
 Más info en el archivo **hadoop.env**  
 
-Para las variables de configuración de *Spark* se encuentran en el archivo **spark.env**
-
-&nbsp;
+Para las variables de configuración de *Spark* se encuentran en el archivo **spark.env**  
 
 ## Versiones de imagenes
 
@@ -105,8 +103,6 @@ La imagen esta creada sobre Ubuntu 20.04
 
 * ~~Docker compose~~
 * Optimizacion de codigo
-
-&nbsp;
 
 ## Repositorio
 
