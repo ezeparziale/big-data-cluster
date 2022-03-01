@@ -2,7 +2,7 @@ version: '3.9'
 services:
 
   spark-master:
-    image: ezeparziale/spark-docker:1.0.0-alpha-spark3.2.0-ubuntu-java8
+    image: ezeparziale/spark-docker:1.0.0-alpha-spark3.2.1-ubuntu-java8
     container_name: spark-master
     ports:
       - 8080:8080
@@ -17,7 +17,7 @@ services:
       - hadoop-net
 
   spark-worker-1:
-    image: ezeparziale/spark-docker:1.0.0-alpha-spark3.2.0-ubuntu-java8
+    image: ezeparziale/spark-docker:1.0.0-alpha-spark3.2.1-ubuntu-java8
     container_name: spark-worker-1
     ports:
       - 8081:8081
@@ -30,7 +30,7 @@ services:
       - hadoop-net
 
   spark-worker-2:
-    image: ezeparziale/spark-docker:1.0.0-alpha-spark3.2.0-ubuntu-java8
+    image: ezeparziale/spark-docker:1.0.0-alpha-spark3.2.1-ubuntu-java8
     container_name: spark-worker-2
     ports:
       - 8082:8081
