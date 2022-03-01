@@ -99,6 +99,10 @@ La imagen esta creada sobre Ubuntu 20.04
   
   * Spark 3.2.0 ready
 
+* 1.0.0-alpha-spark3.2.1-ubuntu-java8
+  
+  * Spark 3.2.1 update
+
 ## To Do
 
 * ~~Docker compose~~
