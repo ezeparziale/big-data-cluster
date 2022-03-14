@@ -1,0 +1,42 @@
+version: '3'
+services:
+
+  hadoop-master:
+    image: ezeparziale/hadoop-docker:1.1.0-hadoop3.3.1-ubuntu-java8
+    container_name: hadoop-server
+    ports:
+      - 9870:9870
+      - 8088:8088
+      - 9000:9000
+      - 9864:9864
+      - 19888:19888
+      - 9868:9868
+    hostname: hadoop-master
+    environment:
+      - HADOOP_PSEUDO_MODE=1
+    env_file: 
+      - ./hadoop.env
+    networks: 
+      - hadoop-net
+    volumes:
+      - hadoop-volume:/hadoop-data
+
+  hive:
+    image: ezeparziale/hive-docker:1.0.0-hadoop3.3.1-ubuntu-java8
+    container_name: hive-server-metastore-derby
+    ports:
+      - 10002:10002
+    hostname: hive-1
+    env_file: 
+      - ./hadoop.env
+      - ./hive.env
+    networks:
+      - hadoop-net
+      
+networks:
+  hadoop-net:
+    name: hadoop-net
+    
+volumes: 
+  hadoop-volume:
+    driver: local
