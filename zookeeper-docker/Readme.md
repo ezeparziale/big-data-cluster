@@ -1,4 +1,4 @@
-# Creación de ambiente zookeeper en docker
+# :man_farmer: Creación de ambiente zookeeper en docker
 
 Imagen de zookeeper lista para utilizar.
 
@@ -15,9 +15,7 @@ Se utiliza JAVA 8 instalado en:
 
 * JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
 
-&nbsp;
-
-## Modo simple
+## :zap: Modo simple
 
 Para el modo simple solo hay que utilizar las variable:
 
@@ -32,9 +30,7 @@ Se encuentra el docker-compose listo en la carpeta:
 
 * launch-zookeeper-single
 
-&nbsp;
-
-## Modo cluster
+## :rocket: Modo cluster
 
 Para el modo cluster completo solo hay que utilizar la variable:
 
@@ -51,9 +47,7 @@ Se lanzan 3 contenedores con:
 
 * QuorumPeerMain
 
-&nbsp;
-
-## Configuración de variables externas
+## :wrench: Configuración de variables externas
 
 Los archivos de zookeeper se configuran mediante variables externas, las cuales son leidas al lanzar el contenedor y se regeneran los archivos.  
 Archivo parametrizable:
@@ -84,6 +78,6 @@ ZOO_clientPort=2181
 
 Más info en el archivo **zoo.env**
 
-## Repositorio
+## :package: Repositorio
 
 Github: [https://github.com/ezeparziale/big-data-cluster](https://github.com/ezeparziale/big-data-cluster)
