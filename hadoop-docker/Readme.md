@@ -16,8 +16,6 @@ Se utiliza JAVA 8 instalado en:
 
 * JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
 
-&nbsp;
-
 ## :zap: Modo pseudo-distribuido
 
 Para el modo pseudo-distribuido solo hay que utilizar la variable:
@@ -36,8 +34,6 @@ Se lanzan los siguientes servicios en un solo contenedor:
 Se encuentra el docker-compose listo en la carpeta:
 
 * launch-pseudo-distributed
-
-&nbsp;
 
 ## :rocket: Modo distribuido completo
 
@@ -65,8 +61,6 @@ Se lanzan los siguientes servicios individuales en contenedores separados:
 * resourcemanager x1
 * historyserver x1
 
-&nbsp;
-
 ## :fire: Modo distribuido completo alta disponibilidad
 
 Es la misma versión que **modo distribuido** pero ahora se agrega zookeeper, journalnode y más namenodes para brindar la alta disponibilidad.
@@ -81,8 +75,6 @@ Se lanzan los siguientes servicios individuales en contenedores separados:
 * datanode x2
 * journalnode x3
 * zookeeper x3
-
-&nbsp;
 
 ## :wrench: Configuración de variables externas
 
@@ -126,8 +118,6 @@ CORE_SITE_fs_defaultFS=hdfs://hadoop-master:9000
 
 Más info en el archivo **hadoop.env**
 
-&nbsp;
-
 ## :station: Puertos
 
 * 9000: hdfs
@@ -135,8 +125,6 @@ Más info en el archivo **hadoop.env**
 * 9868: secondary name node
 * 19888: history server
 * 8088: resource manager
-
-&nbsp;
 
 ## :globe_with_meridians: Acceso
 
@@ -170,13 +158,9 @@ resource manager:
 http://localhost:8088
 ```
 
-&nbsp;
-
-## Versiones de imagenes
+## :pushpin: Versiones de imagenes
 
 La imagen esta creada sobre Ubuntu 20.04
-
-&nbsp;
 
 ## :bookmark: Tags
 
@@ -197,8 +181,6 @@ La imagen esta creada sobre Ubuntu 20.04
 * ~~Versión con high availability~~
 * Optimazacion de codigo
 * Alpine version ???
-
-&nbsp;
 
 ## :package: Repositorio
 
