@@ -188,6 +188,10 @@ La imagen esta creada sobre Ubuntu 20.04
 
   * Se agrega la opción para alta disponibilidad. Más info en carpeta **launch-fully-distributed_high_availability**
 
+* 1.1.0-hadoop3.3.3-ubuntu-java8
+
+  * Upgrade a hadoop 3.3.3
+
 ## To Do
 
 * ~~Versión con high availability~~
