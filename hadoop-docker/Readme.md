@@ -1,4 +1,4 @@
-# Creación de ambiente hadoop en docker
+# :elephant: Creación de ambiente hadoop en docker
 
 Imagen docker con hadoop listo para usarse en docker.  
 100% personalizable con las variables de entornos.  
@@ -18,7 +18,7 @@ Se utiliza JAVA 8 instalado en:
 
 &nbsp;
 
-## Modo pseudo-distribuido
+## :zap: Modo pseudo-distribuido
 
 Para el modo pseudo-distribuido solo hay que utilizar la variable:
 
@@ -39,7 +39,7 @@ Se encuentra el docker-compose listo en la carpeta:
 
 &nbsp;
 
-## Modo distribuido completo
+## :rocket: Modo distribuido completo
 
 Para el modo distribuido completo solo hay que utilizar la variable:
 
@@ -67,7 +67,7 @@ Se lanzan los siguientes servicios individuales en contenedores separados:
 
 &nbsp;
 
-## Modo distribuido completo alta disponibilidad
+## :fire: Modo distribuido completo alta disponibilidad
 
 Es la misma versión que **modo distribuido** pero ahora se agrega zookeeper, journalnode y más namenodes para brindar la alta disponibilidad.
 
@@ -84,7 +84,7 @@ Se lanzan los siguientes servicios individuales en contenedores separados:
 
 &nbsp;
 
-## Configuración de variables externas
+## :wrench: Configuración de variables externas
 
 Los archivos de hadoop se configuran mediante variables externas, las cuales son leídas al lanzar el contenedor y se regeneran los archivos.  
 Archivos parametrizables:
@@ -128,7 +128,7 @@ Más info en el archivo **hadoop.env**
 
 &nbsp;
 
-## Puertos
+## :station: Puertos
 
 * 9000: hdfs
 * 9870: name node
@@ -138,7 +138,7 @@ Más info en el archivo **hadoop.env**
 
 &nbsp;
 
-## Acceso
+## :globe_with_meridians: Acceso
 
 hdfs:
 
@@ -178,7 +178,7 @@ La imagen esta creada sobre Ubuntu 20.04
 
 &nbsp;
 
-## Tags
+## :bookmark: Tags
 
 * 1.0.0-hadoop3.3.1-ubuntu-java8
   
@@ -192,7 +192,7 @@ La imagen esta creada sobre Ubuntu 20.04
 
   * Upgrade a hadoop 3.3.3
 
-## To Do
+## :clipboard: To Do
 
 * ~~Versión con high availability~~
 * Optimazacion de codigo
@@ -200,6 +200,6 @@ La imagen esta creada sobre Ubuntu 20.04
 
 &nbsp;
 
-## Repositorio
+## :package: Repositorio
 
 Github: [https://github.com/ezeparziale/big-data-cluster](https://github.com/ezeparziale/big-data-cluster)
