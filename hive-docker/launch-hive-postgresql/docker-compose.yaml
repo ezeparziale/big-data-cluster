@@ -1,0 +1,81 @@
+version: '3.9'
+services:  
+
+  postgresql:
+    image: postgres:9.6.24
+    container_name: postgresql-server
+    ports:
+      - 5432:5432
+    hostname: postgresql-1
+    restart: always
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_DB=metastore
+      - POSTGRES_PASSWORD=HivePassword1*
+    networks:
+      - hadoop-net
+    volumes:
+      - postgres-volume:/var/lib/postgresql/data
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+
+  hadoop-master:
+    image: ezeparziale/hadoop-docker:1.1.0-hadoop3.3.3-ubuntu-java8
+    container_name: hadoop-server
+    ports:
+      - 9870:9870
+      - 8088:8088
+      - 9000:9000
+      - 9864:9864
+      - 19888:19888
+      - 9868:9868
+    hostname: hadoop-master
+    environment:
+      - HADOOP_PSEUDO_MODE=1
+    env_file: 
+      - ./hadoop.env
+    networks: 
+      - hadoop-net
+    volumes:
+      - hadoop-volume:/hadoop-data
+
+  hive-metastore:
+    image: ezeparziale/hive-docker:1.1.0-hadoop3.3.3-ubuntu-java8
+    container_name: hive-metastore
+    ports:
+      - 9083:9083
+    hostname: hive-metastore-1
+    environment:
+      - HIVE_MODE=metastore
+    env_file: 
+      - ./hadoop.env
+      - ./hive.env
+    depends_on:
+      - postgresql
+    networks:
+      - hadoop-net
+    
+
+  hive-server:
+    image: ezeparziale/hive-docker:1.1.0-hadoop3.3.3-ubuntu-java8
+    container_name: hive-server
+    ports:
+      - 10002:10002
+      - 10000:10000
+    hostname: hive-server-1
+    environment:
+      - HIVE_MODE=hiveserver
+    env_file: 
+      - ./hadoop.env
+      - ./hive.env
+    networks:
+      - hadoop-net
+      
+networks:
+  hadoop-net:
+    name: hadoop-net
+    
+volumes: 
+  hadoop-volume:
+    driver: local
+  postgres-volume:
+    driver: local
