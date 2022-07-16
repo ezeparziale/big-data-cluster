@@ -78,6 +78,14 @@ ZOO_clientPort=2181
 
 Más info en el archivo **zoo.env**
 
+## :bookmark: Tags
+
+* 1.0.0
+  * zookeeper 3.7
+  
+* 1.1.0
+  * *zookeeper 3.8
+
 ## :package: Repositorio
 
 Github: [https://github.com/ezeparziale/big-data-cluster](https://github.com/ezeparziale/big-data-cluster)
