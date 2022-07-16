@@ -6,6 +6,7 @@ Imagen docker con hive listo para usarse en docker.
 Modos:
 
 * Derby
+* Postgres
 
 ## :rocket: Modo Derby
 
@@ -17,12 +18,24 @@ Se encuentra el docker-compose listo en la carpeta:
 
 Este docker-compose tiene hadoop+hive listo para correr. Ademas tiene las variables configuradas en los archivos **hadoop.env** y **hive.env**.
 
-## :key: Puertos
+## :zap: Modo Postgres
+
+Utiliza la base de datos postgres como metastore
+
+Se encuentra en el docker-compose listo en la carpeta:
+
+* launch-hive-postgres
+
+Este docker-compose tiene hadoop+hive listo para correr. Ademas tiene las variables configuradas en los archivos **hadoop.env** y **hive.env**.
+
+Ademas inicializa la base de datos con el **init.sql** y prepara la metastore.
+
+## :station: Puertos
 
 * 10000: hive
 * 10002: hive home
 
-## :link: Acceso
+## :globe_with_meridians: Acceso
 
 hive home:
 
@@ -57,6 +70,13 @@ pass: {{blank_password}}
 show tables;
 ```
 
+## :bookmark: Tags
+
+* 1.0.0-hadoop3.3.1-ubuntu-java8
+  * Primera versión  
+* 1.1.0-hadoop3.3.3-ubuntu-java8
+  * Hive 3.1.3
+  
 ## :package: Repositorio
 
 Github: [https://github.com/ezeparziale/big-data-cluster](https://github.com/ezeparziale/big-data-cluster)
