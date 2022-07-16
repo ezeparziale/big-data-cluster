@@ -43,14 +43,18 @@ beeline
 Conectarse a hive:
 
 ```bash
-!connect -u jdbc:hive2://localhost:10000
+!connect jdbc:hive2://localhost:10000
 ```
 
 Loguearse:
 
 ```bash
 user: root
-pass: {{blank<}}
+pass: {{blank_password}}
+```
+
+```bash
+show tables;
 ```
 
 ## :package: Repositorio
