@@ -7,4 +7,4 @@ Features:
 - [x] Hadoop 🐘
 - [x] Zookeeper 👨‍🌾
 - [X] Spark ⭐
-- [ ] Hive 🐝
+- [X] Hive 🐝
