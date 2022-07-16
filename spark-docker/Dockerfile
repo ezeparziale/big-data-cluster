@@ -21,10 +21,10 @@ ENV HADOOP_HOME=/opt/hadoop
 # Seteo del directorio de trabajo
 WORKDIR /opt
 
-# Descargar Spark 3.2.1
-ENV SPARK_VERSION=3.2.1
-ENV HADOOP_VERSION=3.2
-RUN wget "https://dlcdn.apache.org/spark/spark-$SPARK_VERSION/spark-3.2.1-bin-hadoop$HADOOP_VERSION.tgz" && \
+# Descargar Spark 3.3.0
+ENV SPARK_VERSION=3.3.0
+ENV HADOOP_VERSION=3
+RUN wget "https://dlcdn.apache.org/spark/spark-$SPARK_VERSION/spark-$SPARK_VERSION-bin-hadoop$HADOOP_VERSION.tgz" && \
     tar xvzf spark-$SPARK_VERSION-bin-hadoop$HADOOP_VERSION.tgz && \
     mv spark-$SPARK_VERSION-bin-hadoop$HADOOP_VERSION $SPARK_HOME && \
     rm spark-$SPARK_VERSION-bin-hadoop$HADOOP_VERSION.tgz && \
