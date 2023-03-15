@@ -180,6 +180,12 @@ La imagen esta creada sobre Ubuntu 20.04
 
   * Upgrade a hadoop 3.3.4
 
+* 1.1.0-hadoop3.3.4-ubuntu-java11 **
+
+  * Upgrade java version 11
+  
+** Lastest tag
+
 ## :clipboard: To Do
 
 * ~~Versión con high availability~~
