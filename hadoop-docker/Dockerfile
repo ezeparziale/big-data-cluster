@@ -25,8 +25,8 @@ ENV PATH=$PATH:$HADOOP_HOME/sbin:$HADOOP_HOME/bin
 # Seteo del directorio de trabajo
 WORKDIR /opt
 
-# Descargar hadoop 3.3.3
-ENV HADOOP_VERSION=3.3.3
+# Descargar hadoop 3.3.4
+ENV HADOOP_VERSION=3.3.4
 RUN wget "https://apache.zero.com.ar/hadoop/common/hadoop-$HADOOP_VERSION/hadoop-$HADOOP_VERSION.tar.gz" && \
     tar xzf hadoop-$HADOOP_VERSION.tar.gz && \
     mv hadoop-$HADOOP_VERSION $HADOOP_HOME && \
