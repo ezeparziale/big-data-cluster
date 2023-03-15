@@ -5,13 +5,13 @@ FROM ubuntu:focal
 RUN apt update && apt install -y --no-install-recommends \
     nano \
     wget \
-    openjdk-8-jdk \
+    openjdk-11-jdk \
     openssh-server \
     openssh-client \
     && rm -rf /var/lib/apt/lists/*
 
 # Seteo de variables globales
-ENV JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
+ENV JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64
 ENV HADOOP_HOME=/opt/hadoop
 ENV HADOOP_INSTALL=$HADOOP_HOME
 ENV HADOOP_MAPRED_HOME=$HADOOP_HOME
