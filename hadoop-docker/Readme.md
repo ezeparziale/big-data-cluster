@@ -12,9 +12,13 @@ Hadoop se encuentra instalado en:
 
 * HADOOP_HOME=/opt/hadoop
 
-Se utiliza JAVA 8 instalado en:
+Se utiliza JAVA 11 instalado en:
 
-* JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
+* JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64
+
+> Las versiones de JAVA 8 se instalan en:
+>
+> * JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
 
 ## :zap: Modo pseudo-distribuido
 
